@@ -1,0 +1,16 @@
+h1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: black;
+}
+
+body{
+    font-family: Verdana;
+}
+
+.test-img{
+    width: 200px;
+    height: 200px;
+}
