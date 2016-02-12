@@ -1,16 +1,101 @@
+
+
 h1{
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    color: black;
 }
 
 body{
-    font-family: Verdana;
+	color: white;
+    background: url("background-django.jpg") top right no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: Segoe UI;
+    width: 100%;
+    margin: 0 0 0 0;
 }
 
 .test-img{
     width: 200px;
     height: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
 }
+
+.navBarMargin{
+    margin-top: 60px;
+}
+
+.navBar{
+	margin-bottom: 60px;
+}
+
+.navBarUl {
+	position: fixed;
+	width:100%;
+	margin-top: 0;
+    list-style-type: none;
+    top: 0px;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.navBarLi {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+.navBarLi:last-child {
+    border-right: none;
+}
+
+.navBarLi a {
+    display: block;
+    color: black; 
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navBarLi a:hover:not(.active) {
+    background-color: #F2F2F2;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.done-listUl{
+	width: 300px;
+    height: auto;
+	display: block;
+	border: 1px solid gray;
+	border-radius: 5px;
+	background-color: black;
+	color: white;
+	list-style-type: none;
+	text-align: left;
+	padding-left: 5px;
+}
+
+.static-imagesUl{
+	display:inline;
+    list-style-type: none;
+    top: 0px;
+    padding: 0;
+    overflow: hidden;
+ 
+}
+.tooltip {
+    background-color: #F2F9FF;
+    color: #337BB7;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #337BB7;
+    font-size: 14px;
+    padding: 3px;
+}
+

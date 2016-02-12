@@ -1,10 +1,30 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Rango</title>
+        <link rel="stylesheet" href="{% static "css/style.css" %}" /> <!-- CSS -->
+    </head>
+    <body>
+        <div class="navBar">
+            <ul class="navBarUl">
+                <li class="navBarLi"><a href="/rango/">Home</a></li>
+                <li class="navBarLi"><a href="/rango/static-images/">Static Images</a></li>
+                <li class="navBarLi"><a href="/rango/models/">Models</a></li>
 
-</body>
+                <ul style="float:right;list-style-type:none;">
+                    <li class="navBarLi"><a href="/rango/about/">About</a></li>
+                </ul>
+            </ul>
+        </div>
+        <h1>Here are some images imported from the Static folder</h1>
+
+            <div class="static-images">
+                <ul class="static-imagesUl">
+                    <li><img class="test-img" data-toggle="tooltip" title="Hooray!" src="{% static "images/karambit.jpg" %}"/></li>
+                    <li><img class="test-img" src="{% static "images/rango.jpg" %}"/></li>
+                </ul>
+            </div>
+    </body>
 </html>

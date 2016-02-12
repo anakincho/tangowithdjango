@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends 'navbar.html' %}
+{% load static %}
 
-</body>
-</html>
+
+
+{% block title %}Homepage{% endblock %}
+
+{% block body_block %}
+
+    <div class="navBar">
+        <ul class="navBarUl">
+            <li class="navBarLi"><a href="/rango/">Home</a></li>
+            <li class="navBarLi"><a href="/rango/static-images/">Static Images</a></li>
+            <li class="navBarLi"><a href="/rango/models/">Models</a></li>
+
+            <ul style="float:right;list-style-type:none;">
+                <li class="navBarLi"><a href="/rango/about/">About</a></li>
+            </ul>
+        </ul>
+    </div>
+
+    <h1>Models</h1>
+    {% if categories %}
+        <p>Categories:</p>
+        <ul class="done-listUl">
+            {% for category in categories %}
+            <li class="done-listLi"><a style="text-decoration: none; color:white;" href="/rango/category/{{ category.slug }}">{{ category.name }} has {{ category.likes }} likes</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>There are no categories present.</strong>
+    {% endif %}
+
+    {% if pages %}
+        <p>Top Pages:</p>
+        <ul class="done-listUl">
+            {% for page in pages %}
+            <li class="done-listLi"><a style="text-decoration: none; color:white;" href="{{ page.url }}">{{ page.title }} - {{ page.views }} views</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No Pages online atm.</strong>
+    {% endif %}
+
+    <a href="/rango/add_category/">Add a New Category</a><br />
+{% endblock %}

@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 
+{% extends 'navbar.html' %}
 {% load static %}
 
-<html>
 
-    <head>
-        <title>Rango</title>
-        <link rel="stylesheet" href="{% static "css/style.css" %}" /> <!-- CSS -->
-    </head>
 
-    <body>
-        <h1>Including Static Media</h1>
-        <img class="test-img" src="{% static "images/rango.jpg" %}" alt="Picture of Rango" /> <!-- Images -->
-    </body>
+{% block title %}Homepage{% endblock %}
 
-</html>
+{% block body_block %}
+
+
+        {% if user.is_authenticated %}
+        <h1>Hello {{ user.username }}! Welcome to Steam Price Checks</h1>
+        {% else %}
+        <h1>Rango says... Welcome!</h1>
+        {% endif %}
+
+        <form action="/rango/" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit" />
+        </form>
+        <p>Name of skin: {{ skinInfo.name }}, volume on Steam Market: {{ skinInfo.volume }}, Median Price: {{ skinInfo.median_price }}</p>
+        <p>{{ error }}</p>
+        <div class="done-list">
+            <h3>So far implemented ~ </h3>
+            <ul class="done-listUl">
+                <li class="done-listLi">Setup Personal Machine</li>
+                <li class="done-listLi">Install Python</li>
+                <li class="done-listLi">Install Django</li>
+                <li class="done-listLi">Install VE</li>
+                <li class="done-listLi">Install/Setup GIT</li>
+                <li class="done-listLi">Install pip/tools</li>
+                <li class="done-listLi">Setup Django</li>
+                <li class="done-listLi">Create Django Project</li>
+                <li class="done-listLi">Follow Tango With Django</li>
+                <li class="done-listLi">Fix Absolute Paths</li>
+                <li class="done-listLi">Create View</li>
+                <li class="done-listLi">Map URLS</li>
+                <li class="done-listLi">Create Templates</li>
+                <li class="done-listLi">Use Static Media</li>
+                <li class="done-listLi">Setup Database</li>
+                <li class="done-listLi">Setup Admin Page</li>
+                <li class="done-listLi">Customize Admin Page</li>
+                <li class="done-listLi">Add Models</li>
+                <li class="done-listLi">Implement Slug</li>
+                <li class="done-listLi">Create Categories Page</li>
+                <li class="done-listLi">Show Top 5 Pages</li>
+                <li class="done-listLi">Implement Add Category</li>
+                <li class="done-listLi">Implement Add Page</li>
+                <li class="done-listLi">Implement Authentication</li>
+                <li class="done-listLi">Implement Login/Logoff</li>
+
+
+            </ul>
+        </div>
+        <img class="test-img" src="{% static "images/rango.jpg" %}" alt="Picture of Rango" /> <!-- Images --> <br />
+
+{% endblock %}

@@ -24,6 +24,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+LOGIN_URL = "/rango/login"
+
 ALLOWED_HOSTS = []
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
